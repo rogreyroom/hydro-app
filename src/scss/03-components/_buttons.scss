@@ -1,0 +1,27 @@
+.interactions__btn-add {
+  background: var(--c-white);
+  color: var(-c-black);
+  padding: 0.65rem 2.25rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: filter 0.4s ease-in-out;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+.interactions__btn-remove {
+  background: transparent;
+  color: var(--c-water-light);
+  padding: 0.65rem 2.25rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out;
+
+  &:hover {
+    transform: scaleX(1.1);
+  }
+}
