@@ -6,7 +6,7 @@ PWA hydro-app. The application to count how much water you drink daily.
 
 [go to the website](https://rogreyroom.github.io/hydro-app/)
 
-![my local storage notebook ready website screen](assets/images/cover.png)
+![my local storage notebook ready website screen](public/assets/images/cover.png)
 
 ## Build with
 
