@@ -2,32 +2,17 @@
 
 PWA hydro-app. The application to count how much water you drink daily.
 
+## Website 🚀
+
+[go to the website](https://rogreyroom.github.io/hydro-app/)
+
+![my local storage notebook ready website screen](assets/images/cover.png)
+
 ## Build with
 
-The project is built with the use of the _gulp_ task runner.
-
-The gulp configuration uses [babeljs](https://babeljs.io/) for ES6 and the new [gulp4](https://gulpjs.com/) syntax. It also uses [browser sync](https://www.browsersync.io/) to watch changes in your files and updating connected browsers.
-
-It contains:
-
-- gulp
-- gulp-babel
-- gulp-sass
-- gulp-autoprefixer
-- gulp-concat
-- gulp-uglify
-- gulp-rename
-- gulp-imagemin
-- gulp-sourcemaps
-- gulp-clean-css
-- del
-- browser-sync
-
-## Using gulp
-
-- development - run `gulp` or `npm start`
-- production - run `gulp build` or `npm build`
-- deployment - follow deploy section
+- [gulp-starter](https://github.com/rogreyroom/gulp-starter),
+- [pdkit](https://pdkit.co/)
+- [hammerjs](https://hammerjs.github.io/) touch gestures library
 
 ## Deploy
 
