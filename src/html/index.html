@@ -5,17 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Robert Adamczewski - Gulp Starter Kit</title>
-    <meta name="description" content="Gulp starter with PWA support.  The starter is build with gulp4, babeljs and browser sync." />
+    <title>Robert Adamczewski - hydro app</title>
+    <meta
+      name="description"
+      content="Hydro app. The application to count how much water you drink daily."
+    />
 
     <!-- Title -->
-    <meta property="og:title" content="Robert Adamczewski - Gulp Starter Kit" />
+    <meta property="og:title" content="Robert Adamczewski - hydro app" />
     <!-- OPTIONAL description. 2-4 sentences. -->
-    <meta property="og:description" content="Gulp starter with PWA support. The starter is build with gulp4, babeljs and browser sync." />
+    <meta
+      property="og:description"
+      content="Hydro app. The application to count how much water you drink daily."
+    />
     <!-- full url with http(s) ie. https://rogreyroom.github.io/my-repo/ -->
-    <meta property="og:url" content="https://rogreyroom.github.io/gulp-starter/" />
+    <meta property="og:url" content="https://rogreyroom.github.io/hydro-app/" />
     <!-- full url to the image with http(s) ie. https://rogreyroom.github.io/my-repo/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
-    <meta property="og:image" content="https://rogreyroom.github.io/gulp-starter/assets/images/cover.png" />
+    <meta
+      property="og:image"
+      content="https://rogreyroom.github.io/hydro-app/assets/images/cover.png"
+    />
 
     <link rel="manifest" href="manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,9 +43,59 @@
     <link rel="stylesheet" href="assets/css/style.min.css" />
   </head>
   <body>
-    <header class="header"></header>
-    <main class="main"></main>
-    <footer class="footer"></footer>
+    <main class="main">
+      <section class="water-glass">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="210.004"
+          height="280"
+          viewBox="0 0 210.004 280"
+          class="water-glass__image"
+        >
+          <g
+            id="the-glass"
+            data-name="the-glass"
+            transform="translate(-34.998)"
+          >
+            <path
+              id="glass"
+              data-name="glass"
+              d="M242.748,2.888A8.739,8.739,0,0,0,236.255,0H43.756a8.768,8.768,0,0,0-8.715,9.625l26.25,262.5A8.753,8.753,0,0,0,70.006,280h140a8.724,8.724,0,0,0,8.7-7.875l26.25-262.5A8.633,8.633,0,0,0,242.748,2.888Z"
+              fill="#eceff1"
+            />
+            <path
+              id="wave-down"
+              data-name="wawe-down"
+              d="M58.482,68.812l3.213,31.693,156.4,1.084,2.237-20.476c-17.1-7.327-54.6-17.39-81.03-5.747C113.748,86.634,80.182,72.38,58.482,68.812Z"
+              transform="translate(0)"
+              fill="rgba(98,183,250,0.83)"
+            />
+            <path
+              id="wave-up"
+              data-name="wave-up"
+              d="M192.123,110.936,148.54,112.3,61.42,101.918,59.529,84.8c17.1-7.327,53.558-21.072,79.983-9.43C165.062,86.634,170.423,114.5,192.123,110.936Z"
+              transform="translate(-1 -16)"
+              fill="rgba(98,183,250,0.83)"
+            />
+            <path
+              id="water"
+              data-name="water"
+              d="M219.455,89.25,202.13,262.5H77.881L58.456,68.775c21.875-7,55.125-11.725,81.55,9.975C165.555,99.75,197.755,95.9,219.455,89.25Z"
+              fill="#2196f3"
+            />
+          </g>
+        </svg>
+        <p class="water-glass__counter water-glass__counter--js"></p>
+      </section>
+      <section class="interactions">
+        <button class="interactions__btn-add interactions__btn-add--js">
+          add glass
+        </button>
+        <button class="interactions__btn-remove interactions__btn-remove--js">
+          remove glass
+        </button>
+      </section>
+    </main>
     <script src="assets/js/main.min.js"></script>
   </body>
 </html>
