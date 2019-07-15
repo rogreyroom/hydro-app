@@ -1,6 +1,6 @@
 # Hydro-app
 
-PWA hydro-app. Application to count how many glassess of 🥃 you drink.
+PWA hydro-app. The application to count how much water you drink daily.
 
 ## Build with
 
