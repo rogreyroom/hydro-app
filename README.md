@@ -1,4 +1,6 @@
-# gulp-starter
+# Hydro-app
+
+PWA hydro-app. Application to count how many glassess of 🥃 you drink.
 
 ## Build with
 

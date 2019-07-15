@@ -1,12 +1,12 @@
 {
-  "name": "Gulp Starter Kit",
-  "short_name": "Gulp Starter",
-  "theme_color": "#d64843",
-  "background_color": "#d64843",
+  "name": "PWA hydro app",
+  "short_name": "Hydro app",
+  "theme_color": "#0b98f8",
+  "background_color": "#0b98f8",
   "display": "standalone",
   "orientation": "portrait",
-  "Scope": "/",
-  "start_url": "/",
+  "Scope": "/hydro-app/",
+  "start_url": "/hydro-app/",
   "icons": [
     {
       "src": "assets/pwa/icons/icon-72x72.png",
