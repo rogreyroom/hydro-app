@@ -25,9 +25,11 @@ if ('serviceWorker' in navigator) {
 const addGlass = document.querySelector('.interactions__btn-add--js');
 const removeGlass = document.querySelector('.interactions__btn-remove--js');
 const theGlass = document.querySelector('.water-glass__counter--js');
+const chartOnOff = document.querySelector('.chart__btn--js');
+const chartCanvas = document.querySelector('#myChart');
 const waveD = document.querySelector('.wave-down--js');
 const waveU = document.querySelector('.wave-up--js');
-let key = `hydro-${new Date().toISOString().slice(0, 10)}`;
+let key = `hydro-${new Date().toISOString().slice(0, 16)}`;
 let counter;
 
 // Glass
@@ -49,6 +51,8 @@ const addToGlass = () => {
   theGlass.innerHTML = counter;
   waveD.classList.toggle('wave-down--animation');
   waveU.classList.toggle('wave-up--animation');
+
+  generateChart();
 };
 
 const removeFromGlass = () => {
@@ -63,8 +67,17 @@ const removeFromGlass = () => {
   }
   waveD.classList.toggle('wave-down--animation');
   waveU.classList.toggle('wave-up--animation');
+  generateChart();
 };
+
+// Chart
+
+const showChart {
+  generateChart();
+  chartCanvas.classList.toggle('chart__canvas--active');
+}
 
 addGlass.addEventListener('click', addToGlass);
 removeGlass.addEventListener('click', removeFromGlass);
+chartOnOff.addEventListener('click', showChart);
 counter = myStorage();
