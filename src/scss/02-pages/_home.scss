@@ -24,3 +24,20 @@
   justify-content: center;
   align-items: center;
 }
+
+.wave-down {
+  transition: transform 0.9s ease-in-out;
+
+  &--animation {
+    transform: translate(-0.2px, 3px);
+  }
+}
+
+.wave-up {
+  transform: translate(-1px, -16px);
+  transition: transform 0.8s ease-in-out 0.3s;
+
+  &--animation {
+    transform: translate(4px, -8px);
+  }
+}

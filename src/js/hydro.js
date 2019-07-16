@@ -25,6 +25,8 @@ if ('serviceWorker' in navigator) {
 const addGlass = document.querySelector('.interactions__btn-add--js');
 const removeGlass = document.querySelector('.interactions__btn-remove--js');
 const theGlass = document.querySelector('.water-glass__counter--js');
+const waveD = document.querySelector('.wave-down--js');
+const waveU = document.querySelector('.wave-up--js');
 let key = `hydro-${new Date().toISOString().slice(0, 10)}`;
 let counter;
 
@@ -45,6 +47,8 @@ const addToGlass = () => {
   counter++;
   localStorage.setItem(key, counter);
   theGlass.innerHTML = counter;
+  waveD.classList.toggle('wave-down--animation');
+  waveU.classList.toggle('wave-up--animation');
 };
 
 const removeFromGlass = () => {
@@ -57,6 +61,8 @@ const removeFromGlass = () => {
     localStorage.setItem(key, counter);
     theGlass.innerHTML = counter;
   }
+  waveD.classList.toggle('wave-down--animation');
+  waveU.classList.toggle('wave-up--animation');
 };
 
 addGlass.addEventListener('click', addToGlass);
