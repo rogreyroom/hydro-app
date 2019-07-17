@@ -7,15 +7,15 @@
   &__canvas {
     // position: absolute;
     background: var(--c-bg-gradient);
-    width: 100vw;
-    height: 100vh;
-    visibility: hidden;
-    z-index: 10;
+    // width: 100vw;
+    // height: 100vh;
+    // visibility: hidden;
+    // z-index: 10;
 
-    &--active {
-      display: block;
-      visibility: visable;
-    }
+    // &--active {
+    //   display: block;
+    //   visibility: visable;
+    // }
   }
 }
 

@@ -29,7 +29,7 @@ const chartOnOff = document.querySelector('.chart__btn--js');
 const chartCanvas = document.querySelector('#myChart');
 const waveD = document.querySelector('.wave-down--js');
 const waveU = document.querySelector('.wave-up--js');
-let key = `hydro-${new Date().toISOString().slice(0, 16)}`;
+let key = `hydro-${new Date().toISOString().slice(0, 10)}`;
 let counter;
 
 // Glass
@@ -72,12 +72,12 @@ const removeFromGlass = () => {
 
 // Chart
 
-const showChart {
-  generateChart();
-  chartCanvas.classList.toggle('chart__canvas--active');
-}
+// const showChart {
+//   generateChart();
+//   chartCanvas.classList.toggle('chart__canvas--active');
+// }
 
 addGlass.addEventListener('click', addToGlass);
 removeGlass.addEventListener('click', removeFromGlass);
-chartOnOff.addEventListener('click', showChart);
+// chartOnOff.addEventListener('click', showChart);
 counter = myStorage();
