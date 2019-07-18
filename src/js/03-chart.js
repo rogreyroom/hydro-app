@@ -3,6 +3,7 @@ const getData = yearWeek => {
   const chartData = [];
   const chartX = [];
   const chartY = [];
+  let chartScales = {};
 
   if (localStorage.length !== null) {
     for (let i = 0; i <= localStorage.length - 1; i++) {
@@ -35,7 +36,7 @@ const getData = yearWeek => {
       chartY.push(item.value);
     });
 
-    const chartScales =
+    chartScales =
       {
         weekNumber: yearWeek,
         xScale: chartX,
@@ -48,15 +49,14 @@ const getData = yearWeek => {
 
 // createChart
 const createChart = chartValues => {
-  // const ctx = document.getElementById('myChart').getContext('2d');
   const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: chartValues.chartX,
+      labels: chartValues.xScale,
       datasets: [
         {
           label: `Week: ${chartValues.weekNumber}`,
-          data: chartValues.chartY,
+          data: chartValues.yScale,
           backgroundColor: '#3DC3F3',
           borderColor: '#76C1FB',
           borderWidth: 1,
@@ -102,6 +102,10 @@ const checkWeek = () => {
 
 const addWeek = () => {
   chartYearWeek++;
+  if (chartYearWeek > moment().isoWeek()) {
+    chartYearWeek = moment().isoWeek();
+    // here can be some popup info - no more data;
+  }
   //week nie może być większy od 52 lub 53
   let test = moment().isoWeeks();
   console.log(`test: ${test}`);
@@ -119,3 +123,6 @@ const showChart = () => {
   generateChart();
   chartCanvas.classList.toggle('chart__canvas--active');
 };
+
+// chart actions
+chartOnOff.addEventListener('click', showChart);
