@@ -95,13 +95,19 @@
         </button>
       </section>
       <section class="chart">
-        <button class="chart__btn chart__btn--js">📊</button>
-        <canvas
+        <section class="chart__nav">
+          <button class="chart__btn btn__next--js">next week</button>
+          <button class="chart__btn btn__on-of--js">show chart</button>
+          <button class="chart__btn btn__previous--js">previous week</button>
+        </section>
+        <section class="chart__canvas">
+          <canvas
           class="chart__canvas chart__canvas--js"
           id="myChart"
           width="288"
           height="200"
         ></canvas>
+        </section>
       </section>
     </main>
     <script src="assets/js/main.min.js"></script>

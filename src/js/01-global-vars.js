@@ -8,7 +8,9 @@ const waveU = document.querySelector('.wave-up--js');
 // history chart
 const chartCanvas = document.querySelector('#myChart');
 const ctx = document.getElementById('myChart').getContext('2d'); //??? czy tu to dać
-const chartOnOff = document.querySelector('.chart__btn--js');
+const chartOnOff = document.querySelector('.btn__on-of--js');
+const chartNextWeek = document.querySelector('.btn__next--js');
+const chartPreviousWeek = document.querySelector('.btn__previous--js');
 
 // local storage key name
 const localStorageKey = `hydro-${new Date().toISOString().slice(0, 10)}`;

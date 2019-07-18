@@ -77,13 +77,6 @@ const createChart = chartValues => {
   });
 };
 
-// generate Chart
-const generateChart = () => {
-  const week = checkWeek();
-  const chartData = getData(week);
-  createChart(chartData);
-};
-
 //test-------------------
 
 /*
@@ -93,36 +86,43 @@ const generateChart = () => {
 */
 
 const checkWeek = () => {
-  if (chartYearWeek <= 0) {
+  if (chartYearWeek < 0) {
+    return (chartYearWeek = 1);
+  } else if (chartYearWeek === 0) {
+    return (chartYearWeek = moment().isoWeek());
+  } else if (chartYearWeek > moment().isoWeek()) {
     return (chartYearWeek = moment().isoWeek());
   } else {
     return chartYearWeek;
   }
 };
 
-const addWeek = () => {
+const nextWeek = () => {
   chartYearWeek++;
-  if (chartYearWeek > moment().isoWeek()) {
-    chartYearWeek = moment().isoWeek();
-    // here can be some popup info - no more data;
-  }
-  //week nie może być większy od 52 lub 53
-  let test = moment().isoWeeks();
-  console.log(`test: ${test}`);
+  generateChart();
 };
 
-const removeWeek = () => {
+const previousWeek = () => {
   chartYearWeek--;
-  checkWeek();
-  //week nie może być większy od 52 lub 53
+  generateChart();
 };
 
 //end test---------------
 
+// generate Chart
+const generateChart = () => {
+  const week = checkWeek();
+  console.log(week);
+  const chartData = getData(week);
+  createChart(chartData);
+};
+
 const showChart = () => {
   generateChart();
-  chartCanvas.classList.toggle('chart__canvas--active');
+  // chartCanvas.classList.toggle('chart__canvas--active');
 };
 
 // chart actions
 chartOnOff.addEventListener('click', showChart);
+chartNextWeek.addEventListener('click', nextWeek);
+chartPreviousWeek.addEventListener('click', previousWeek);
