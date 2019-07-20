@@ -77,23 +77,41 @@ const createChart = chartValues => {
   });
 };
 
-//test-------------------
+const msgInfo = msg => {
+  let newMessage = document.createElement('p');
+  newMessage.className = 'chart__message-text';
+  newMessage.innerHTML = msg;
+  messagePanel.appendChild(newMessage);
+};
 
-/*
-  stan poczatkowy - obecny TK
-  zapamietaj stan poczatkowy lub zczytaj
-
-*/
+const msgRemove = () => {
+  if (messagePanel.firstElementChild !== null) {
+    messagePanel.removeChild(messagePanel.firstElementChild);
+  }
+};
 
 const checkWeek = () => {
-  if (chartYearWeek < 0) {
+  if (chartYearWeek <= 0) {
     return (chartYearWeek = 1);
-  } else if (chartYearWeek === 0) {
-    return (chartYearWeek = moment().isoWeek());
   } else if (chartYearWeek > moment().isoWeek()) {
-    return (chartYearWeek = moment().isoWeek());
+    msgRemove();
+    msgInfo('No data for next week.');
+    if (chartYearWeek > moment().isoWeeksInYear()) {
+      chartYearWeek = moment().isoWeeksInYear();
+      return chartYearWeek;
+    } else {
+      return chartYearWeek;
+    }
   } else {
-    return chartYearWeek;
+    const isData = getData(chartYearWeek);
+    if (chartYearWeek < moment().isoWeek() && isData.yScale.length === 0) {
+      msgRemove();
+      msgInfo('No data for previous week.');
+      return chartYearWeek;
+    } else {
+      msgRemove();
+      return chartYearWeek;
+    }
   }
 };
 
@@ -102,27 +120,26 @@ const nextWeek = () => {
   generateChart();
 };
 
+const currentWeek = () => {
+  chartYearWeek = moment().isoWeek();
+  generateChart();
+};
+
 const previousWeek = () => {
   chartYearWeek--;
   generateChart();
 };
 
-//end test---------------
-
-// generate Chart
 const generateChart = () => {
   const week = checkWeek();
-  console.log(week);
   const chartData = getData(week);
   createChart(chartData);
 };
 
-const showChart = () => {
-  generateChart();
-  // chartCanvas.classList.toggle('chart__canvas--active');
-};
+// chart
+generateChart();
 
 // chart actions
-chartOnOff.addEventListener('click', showChart);
+chartCurrent.addEventListener('click', currentWeek);
 chartNextWeek.addEventListener('click', nextWeek);
 chartPreviousWeek.addEventListener('click', previousWeek);

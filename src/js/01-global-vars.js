@@ -8,9 +8,11 @@ const waveU = document.querySelector('.wave-up--js');
 // history chart
 const chartCanvas = document.querySelector('#myChart');
 const ctx = document.getElementById('myChart').getContext('2d'); //??? czy tu to dać
-const chartOnOff = document.querySelector('.btn__on-of--js');
+const chartCurrent = document.querySelector('.btn__current--js');
 const chartNextWeek = document.querySelector('.btn__next--js');
 const chartPreviousWeek = document.querySelector('.btn__previous--js');
+// chart message
+const messagePanel = document.querySelector('.chart__message--js');
 
 // local storage key name
 const localStorageKey = `hydro-${new Date().toISOString().slice(0, 10)}`;
@@ -19,4 +21,5 @@ const localStorageKey = `hydro-${new Date().toISOString().slice(0, 10)}`;
 let glassCounter;
 
 // current week
-let chartYearWeek = 0;
+// let chartYearWeek = 0;
+let chartYearWeek = moment().isoWeek();
