@@ -18,8 +18,12 @@ const config = {
     dest: './public/assets/css/',
   },
   scripts: {
-    src: './src/js/**/*.js',
+    src: ['./src/js/**/*.js', '!./src/js/lib/*'],
     dest: './public/assets/js/',
+  },
+  lib: {
+    src: './src/js/lib/*',
+    dest: './public/assets/lib/',
   },
   pwa: {
     src: './src/pwa/**/*',
@@ -88,6 +92,11 @@ const scripts = () => {
     .pipe(gulp.dest(config.scripts.dest));
 };
 
+// Lib
+const lib = () => {
+  return gulp.src(config.lib.src).pipe(gulp.dest(config.lib.dest));
+};
+
 // PWA
 const pwa = () => {
   return gulp.src(config.pwa.src).pipe(gulp.dest(config.pwa.dest));
@@ -128,6 +137,7 @@ const html = () => {
 const watch = () => {
   gulp.watch(config.styles.src, gulp.series(styles, reload));
   gulp.watch(config.scripts.src, gulp.series(scripts, reload));
+  gulp.watch(config.lib.src, gulp.series(lib, reload));
   gulp.watch(config.pwa.src, gulp.series(pwa, reload));
   gulp.watch(config.images.src, gulp.series(images, reload));
   gulp.watch(config.fonts.src, gulp.series(fonts, reload));
@@ -146,6 +156,7 @@ export const dev = gulp.parallel(
   images,
   fonts,
   html,
+  lib,
   pwa,
   watch,
   server,
@@ -154,7 +165,7 @@ export const dev = gulp.parallel(
 // Build - public
 export const build = gulp.series(
   clean,
-  gulp.parallel(styles, scripts, images, fonts, html, pwa),
+  gulp.parallel(styles, scripts, images, fonts, html, lib, pwa),
 );
 
 // Default
