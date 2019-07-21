@@ -10,9 +10,9 @@ PWA hydro-app. The application to count how much water you drink daily.
 
 ## Build with
 
-- [gulp-starter](https://github.com/rogreyroom/gulp-starter),
-- [pdkit](https://pdkit.co/)
-- [hammerjs](https://hammerjs.github.io/) touch gestures library
+- [gulp-starter](https://github.com/rogreyroom/gulp-starter)
+- [chart.js](https://www.chartjs.org/)
+- [momentjs](https://momentjs.com/)
 
 ## Deploy
 
