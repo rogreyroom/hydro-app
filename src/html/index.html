@@ -34,10 +34,8 @@
       href="assets/images/pwa/icons/icon-192x192.png"
     />
     <link rel="stylesheet" href="assets/css/style.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>  </head>
-
-
+    <script src="assets/lib/chart.min.js"></script>
+    <script src="assets/lib/moment.min.js"></script>
   </head>
   <body>
     <main class="main">
@@ -95,8 +93,7 @@
         </button>
       </section>
       <section class="chart">
-        <section class="chart__message chart__message--js">
-        </section>
+        <section class="chart__message chart__message--js"></section>
         <section class="chart__nav">
           <button class="chart__btn btn__next--js">next week</button>
           <button class="chart__btn btn__current--js">this week</button>
@@ -104,11 +101,11 @@
         </section>
         <section class="chart__canvas">
           <canvas
-          class="chart__canvas chart__canvas--js"
-          id="myChart"
-          width="288"
-          height="300"
-        ></canvas>
+            class="chart__canvas chart__canvas--js"
+            id="myChart"
+            width="288"
+            height="300"
+          ></canvas>
         </section>
       </section>
     </main>

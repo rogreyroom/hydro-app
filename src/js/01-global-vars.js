@@ -21,5 +21,4 @@ const localStorageKey = `hydro-${new Date().toISOString().slice(0, 10)}`;
 let glassCounter;
 
 // current week
-// let chartYearWeek = 0;
 let chartYearWeek = moment().isoWeek();
