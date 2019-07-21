@@ -57,19 +57,29 @@ const createChart = chartValues => {
         {
           label: `Week: ${chartValues.weekNumber}`,
           data: chartValues.yScale,
-          backgroundColor: '#3DC3F3',
+          backgroundColor: '#eceff1',
           borderColor: '#76C1FB',
           borderWidth: 1,
         },
       ],
     },
     options: {
+      title: {
+        display: true,
+        text: 'How much water you drank.',
+      },
       scales: {
         yAxes: [
           {
             ticks: {
               beginAtZero: true,
+              stepSize: 1,
             },
+          },
+        ],
+        xAxes: [
+          {
+            barThickness: 15,
           },
         ],
       },
@@ -95,7 +105,7 @@ const checkWeek = () => {
     return (chartYearWeek = 1);
   } else if (chartYearWeek > moment().isoWeek()) {
     msgRemove();
-    msgInfo('No data for next week.');
+    msgInfo('No data for this week.');
     if (chartYearWeek > moment().isoWeeksInYear()) {
       chartYearWeek = moment().isoWeeksInYear();
       return chartYearWeek;
@@ -106,7 +116,7 @@ const checkWeek = () => {
     const isData = getData(chartYearWeek);
     if (chartYearWeek < moment().isoWeek() && isData.yScale.length === 0) {
       msgRemove();
-      msgInfo('No data for previous week.');
+      msgInfo('No data for this week.');
       return chartYearWeek;
     } else {
       msgRemove();
